@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/hoapham/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/Users/hoapham/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/hoapham/.local/share/nvim/site/pack/packer/start/vim-fugitive",
