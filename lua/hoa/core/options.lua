@@ -70,7 +70,6 @@ vim.opt.shortmess = vim.opt.shortmess + { c = true}
 -- Goto previous / next diagnostic warning / error 
 -- Show inlay_hints more frequently 
 vim.cmd([[
-set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 

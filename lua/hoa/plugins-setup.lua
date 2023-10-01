@@ -89,7 +89,6 @@ return packer.startup(function(use)
     {'L3MON4D3/LuaSnip'},     -- Required
   }
 
-
 }
 
   if ensure_packer() then
