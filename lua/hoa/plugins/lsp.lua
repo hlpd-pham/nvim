@@ -1,10 +1,6 @@
 require("nvim-lsp-installer").setup()
 local lsp = require("lsp-zero")
-
 lsp.preset("recommended")
-
-lsp.ensure_installed({
-})
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
@@ -20,6 +16,20 @@ require('lspconfig').solargraph.setup {
   on_attach = lsp.on_attach
 }
 
+-- configuration for golang
+require('lspconfig').gopls.setup({
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
+
+-- general lsp stuffs
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
