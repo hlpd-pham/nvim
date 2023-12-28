@@ -55,6 +55,8 @@ return packer.startup(function(use)
 
   use('williamboman/mason.nvim')
   use('williamboman/mason-lspconfig.nvim')
+  use('williamboman/nvim-lsp-installer')
+
 
   -- LSP Support
   use('neovim/nvim-lspconfig')

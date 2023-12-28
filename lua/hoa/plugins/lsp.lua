@@ -1,3 +1,4 @@
+require("nvim-lsp-installer").setup {}
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
