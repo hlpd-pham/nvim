@@ -4,12 +4,17 @@ local keymap = vim.keymap -- for conciseness
 
 -- general keymaps
 keymap.set("i", "jk", "<ESC>")
+
+-- toggle no hls
 keymap.set("n", "<leader>nh", ":nohl<CR>")
+
+-- merge lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set("n", "x", '"_x')
 
+-- increment and decrement
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
