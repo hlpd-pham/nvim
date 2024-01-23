@@ -12,16 +12,3 @@ require("hoa.plugins.nvim-tree")
 require("hoa.plugins.mason")
 require("hoa.plugins.harpoon")
 
-vim.diagnostic.config({
-    virtual_text = false,
-    signs = true,
-    update_in_insert = true,
-    underline = true,
-    severity_sort = false,
-    float = {
-        border = 'rounded',
-        source = 'always',
-        header = '',
-        prefix = '',
-    },
-})
