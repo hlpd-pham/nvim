@@ -87,11 +87,19 @@ return packer.startup(function(use)
     branch = 'v2.x',
     requires = {
 
-    -- Autocompletion
-    {'L3MON4D3/LuaSnip'},     -- Required
+      -- Autocompletion
+      {'L3MON4D3/LuaSnip'},     -- Required
+    }
   }
 
-}
+  use {
+    -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help ibl`
+    main = 'ibl',
+    opts = {},
+  }
 
   if ensure_packer() then
     require("packer").sync()

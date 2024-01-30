@@ -11,4 +11,6 @@ require("hoa.plugins.lsp")
 require("hoa.plugins.nvim-tree")
 require("hoa.plugins.mason")
 require("hoa.plugins.harpoon")
+require("hoa.plugins.ibl")
+
 
