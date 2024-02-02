@@ -92,6 +92,9 @@ return packer.startup(function(use)
     }
   }
 
+  -- lsp format
+  use('lukas-reineke/lsp-format.nvim')
+
   use {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
