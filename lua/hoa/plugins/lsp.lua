@@ -9,17 +9,6 @@ lsp.ensure_installed({
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp')
-  .default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-require('lspconfig').solargraph.setup {
-  flags = {
-    debounce_text_changes = 150,
-  },
-  capabilities = capabilities,
-  on_attach = lsp.on_attach
-}
 
 -- configuration for golang
 require('lspconfig').gopls.setup({
@@ -33,6 +22,8 @@ require('lspconfig').gopls.setup({
     },
   },
 })
+
+require('lspconfig').pyright.setup{}
 
 -- general lsp stuffs
 local cmp = require('cmp')
