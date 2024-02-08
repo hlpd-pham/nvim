@@ -10,8 +10,7 @@ require("hoa.plugins.fugitive")
 require("hoa.plugins.lsp")
 require("hoa.plugins.nvim-tree")
 require("hoa.plugins.mason")
--- harpoon is broken somehow
--- require("hoa.plugins.harpoon")
+require("hoa.plugins.harpoon")
 require("hoa.plugins.ibl")
 
 

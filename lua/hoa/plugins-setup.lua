@@ -79,11 +79,11 @@ return packer.startup(function(use)
   use('hrsh7th/vim-vsnip')
 
   -- the best plugin, it's fucking broken though
-  -- use {
-  --     "ThePrimeagen/harpoon",
-  --     branch = "harpoon2",
-  --     requires = { {"nvim-lua/plenary.nvim"} }
-  -- }
+  use {
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      requires = { {"nvim-lua/plenary.nvim"} }
+  }
 
   -- setup lsp zero
   use {
