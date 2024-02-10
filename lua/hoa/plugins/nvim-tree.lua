@@ -36,6 +36,9 @@ nvim_tree.setup {
         enable = true,
         timeout = 500,
     },
+    filters = {
+        git_ignored = false,
+    },
     view = {
         width = 35,
         side = "left",
