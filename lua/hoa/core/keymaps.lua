@@ -44,3 +44,6 @@ keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- toggle line wrap
+keymap.set("n", "<C-w>", ":set wrap!<CR>")
+
