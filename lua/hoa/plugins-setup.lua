@@ -57,6 +57,8 @@ return packer.startup(function(use)
   use('williamboman/mason-lspconfig.nvim')
   use('williamboman/nvim-lsp-installer')
 
+  -- Formatting
+  use("stevearc/conform.nvim")
 
   -- LSP Support
   use('neovim/nvim-lspconfig')
