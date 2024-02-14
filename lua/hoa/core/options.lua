@@ -35,6 +35,9 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 
+-- uncomment to enable fold method
+-- opt.foldmethod = "indent"
+
 opt.iskeyword:append("-")
 
 opt.guicursor = ""
@@ -62,33 +65,27 @@ opt.colorcolumn = "80"
 -- noselect: Do not select, force to select one from the menu
 -- shortness: avoid showing extra messages when using completion
 -- updatetime: set updatetime for CursorHold
-vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
-vim.opt.shortmess = vim.opt.shortmess + { c = true}
+vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
 
 -- Fixed column for diagnostics to appear
 -- Show autodiagnostic popup on cursor hover_range
--- Goto previous / next diagnostic warning / error 
--- Show inlay_hints more frequently 
+-- Goto previous / next diagnostic warning / error
+-- Show inlay_hints more frequently
 vim.cmd([[
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 
 vim.diagnostic.config({
-    virtual_text = false,
-    signs = true,
-    update_in_insert = true,
-    underline = true,
-    severity_sort = false,
-    float = {
-        border = 'rounded',
-        source = 'always',
-        header = '',
-        prefix = '',
-    },
+	virtual_text = false,
+	signs = true,
+	update_in_insert = true,
+	underline = true,
+	severity_sort = false,
+	float = {
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
 })
-
-
-
-
-
-
