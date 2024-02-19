@@ -9,8 +9,8 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- merge lines
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set("n", "x", '"_x')
 
@@ -47,3 +47,13 @@ keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- toggle line wrap
 keymap.set("n", "<C-w>", ":set wrap!<CR>")
 
+-- copy pasta magic
+keymap.set("x", "<leader>p", [["_dP]])
+
+-- next greatest remap ever : asbjornHaland
+keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- copy paragraph
+keymap.set("n", "<leader>Y", [["+Y]]) -- copy line
+
+keymap.set("n", "<leader><leader>", function()
+	vim.cmd("so")
+end)
