@@ -8,6 +8,9 @@ keymap.set("i", "jk", "<ESC>")
 -- toggle no hls
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
+-- open explorer
+keymap.set("n", "<leader>", ":Ex<CR>")
+
 -- merge lines
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
