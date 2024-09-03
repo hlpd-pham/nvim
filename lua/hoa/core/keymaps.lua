@@ -28,8 +28,8 @@ keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<Tab>", ":tabn<CR>") -- go to next tab
-keymap.set("n", "<S-Tab>", ":tabp<CR>") -- go to prev tab
+-- keymap.set("n", "<Tab>", ":tabn<CR>") -- go to next tab
+-- keymap.set("n", "<S-Tab>", ":tabp<CR>") -- go to prev tab
 
 -- half page jumping
 keymap.set("n", "<C-d>", "<C-d>zz")

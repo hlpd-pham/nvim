@@ -3,8 +3,12 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
+	"clangd",
+	"gopls",
 	"tsserver",
 	"rust_analyzer",
+	"pyright",
+	"solargraph",
 })
 
 -- Fix Undefined global 'vim'
@@ -22,6 +26,8 @@ require("lspconfig").gopls.setup({
 		},
 	},
 })
+
+require("lspconfig").clangd.setup({})
 
 require("lspconfig").pyright.setup({
 	settings = {

@@ -36,7 +36,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- uncomment to enable fold method
--- opt.foldmethod = "indent"
+opt.foldmethod = "manual"
 
 opt.iskeyword:append("-")
 
@@ -56,7 +56,7 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 opt.updatetime = 50
-opt.colorcolumn = "80"
+opt.colorcolumn = ""
 
 --Set completeopt to have a better completion experience
 -- :help completeopt
