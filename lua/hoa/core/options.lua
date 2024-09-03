@@ -56,7 +56,7 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 opt.updatetime = 50
-opt.colorcolumn = "80"
+opt.colorcolumn = "120"
 
 --Set completeopt to have a better completion experience
 -- :help completeopt
