@@ -56,7 +56,7 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 opt.updatetime = 50
-opt.colorcolumn = "120"
+opt.colorcolumn = ""
 
 --Set completeopt to have a better completion experience
 -- :help completeopt
@@ -89,6 +89,3 @@ vim.diagnostic.config({
 		prefix = "",
 	},
 })
-
--- add path to python env for local LSP to run
--- vim.g.python3_host_prog = "/path/to/python/env"

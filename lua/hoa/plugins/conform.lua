@@ -1,32 +1,32 @@
 require("conform").setup({
-	formatters_by_ft = {
-		javascript = { "prettier" },
-		typescript = { "prettier" },
-		javascriptreact = { "prettier" },
-		typescriptreact = { "prettier" },
-		css = { "prettier" },
-		html = { "prettier" },
-		json = { "prettier" },
-		yaml = { "prettier" },
-		markdown = { "prettier" },
-		lua = { "stylua" },
-		python = { "isort", "black" },
-	},
+  formatters_by_ft = {
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescriptreact = { "prettier" },
+    css = { "prettier" },
+    html = { "prettier" },
+    json = { "prettier" },
+    yaml = { "prettier" },
+    markdown = { "prettier" },
+    lua = { "stylua" },
+    python = { "isort", "black" },
+  },
   format_on_save = function(bufnr)
     -- Disable with a global or buffer-local variable
     if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
       return
     end
-    return { timeout_ms = 500, lsp_format = "fallback", async = false }
+    return { timeout_ms = 5000, lsp_format = "fallback", async = false }
   end,
 })
 
 vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-	require("conform").format({
-		lsp_fallback = true,
-		async = false,
-		timeout_ms = 5000,
-	})
+  require("conform").format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 5000,
+  })
 end, { desc = "Format file on range (in visual mode)" })
 
 vim.api.nvim_create_user_command("FormatDisable", function(args)
