@@ -36,7 +36,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- uncomment to enable fold method
--- opt.foldmethod = "indent"
+opt.foldmethod = "manual"
 
 opt.iskeyword:append("-")
 
