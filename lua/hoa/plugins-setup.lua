@@ -78,7 +78,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/vim-vsnip")
 
-	-- the best plugin, it's fucking broken though
+	-- the best plugin
 	use({
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
@@ -96,8 +96,8 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- Add indentation guides even on blank lines
 	use({
-		-- Add indentation guides even on blank lines
 		"lukas-reineke/indent-blankline.nvim",
 		-- Enable `lukas-reineke/indent-blankline.nvim`
 		-- See `:help ibl`
@@ -105,9 +105,9 @@ return packer.startup(function(use)
 		opts = {},
 	})
 
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
-
-  use('leoluz/nvim-dap-go')
+	-- debugger
+	use("mfussenegger/nvim-dap")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 
 	if ensure_packer() then
 		require("packer").sync()
