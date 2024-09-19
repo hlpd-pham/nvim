@@ -89,6 +89,3 @@ vim.diagnostic.config({
 		prefix = "",
 	},
 })
-
--- add path to python env for local LSP to run
--- vim.g.python3_host_prog = "/path/to/python/env"
