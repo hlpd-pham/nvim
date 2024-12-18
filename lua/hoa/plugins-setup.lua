@@ -109,6 +109,11 @@ return packer.startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use("leoluz/nvim-dap-go")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+	use({
+		"microsoft/vscode-js-debug",
+		run = "npm install --legacy-peer-deps && npm run compile",
+	})
 
 	if ensure_packer() then
 		require("packer").sync()
