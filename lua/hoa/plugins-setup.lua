@@ -106,9 +106,15 @@ return packer.startup(function(use)
 	})
 
 	-- debugger
-	use("mfussenegger/nvim-dap")
-	use("leoluz/nvim-dap-go")
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
+	-- use("mfussenegger/nvim-dap")
+	-- use("leoluz/nvim-dap-go")
+	-- use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
+	-- use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+
+	-- navigating your directories like a text editing buffer
+	use({
+		"stevearc/oil.nvim",
+	})
 
 	if ensure_packer() then
 		require("packer").sync()

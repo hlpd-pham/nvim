@@ -84,8 +84,10 @@ vim.diagnostic.config({
 	severity_sort = false,
 	float = {
 		border = "rounded",
-		source = "always",
 		header = "",
 		prefix = "",
 	},
 })
+
+vim.g.python3_host_prog = "/Users/hoapham/workspace/local-python/bin/python3"
+-- vim.g.python3_host_prog = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3"
