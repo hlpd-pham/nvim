@@ -60,3 +60,5 @@ keymap.set("n", "<leader>Y", [["+Y]]) -- copy line
 keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end)
+
+keymap.set("n", "-", ":Ex", { desc = "Open Explorer" })
