@@ -31,6 +31,11 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 -- keymap.set("n", "<Tab>", ":tabn<CR>") -- go to next tab
 -- keymap.set("n", "<S-Tab>", ":tabp<CR>") -- go to prev tab
 
+keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
+keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+
 -- half page jumping
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
@@ -42,8 +47,6 @@ keymap.set("n", "N", "Nzzzv")
 -- Just don't do anything with capital q
 keymap.set("n", "Q", "<nop>")
 
-keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -61,4 +64,4 @@ keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end)
 
-keymap.set("n", "-", ":Ex", { desc = "Open Explorer" })
+keymap.set("n", "-", ":Ex<CR>", { desc = "Open Explorer" })

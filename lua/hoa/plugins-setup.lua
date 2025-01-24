@@ -106,10 +106,28 @@ return packer.startup(function(use)
 	})
 
 	-- debugger
-	-- use("mfussenegger/nvim-dap")
+	use("mfussenegger/nvim-dap")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
+
 	-- use("leoluz/nvim-dap-go")
-	-- use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 	-- use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+
+	-- use({
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	version = "^5", -- Recommended
+	-- 	lazy = false, -- This plugin is already lazy
+	-- 	ft = "rust",
+	-- 	config = function()
+	-- 		require("rustaceanvim").setup({
+	-- 			dap = {
+	-- 				adapter = require("rustaceanvim.config").get_codelldb_adapter(
+	-- 					"/Users/hoapham/workspace/codelldb/extension/adapter/codelldb", -- Path to codelldb executable
+	-- 					"/Users/hoapham/workspace/codelldb/extension/lldb/lib/liblldb.dylib" -- Path to liblldb.dylib
+	-- 				),
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- })
 
 	if ensure_packer() then
 		require("packer").sync()
