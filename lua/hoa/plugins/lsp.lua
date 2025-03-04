@@ -24,6 +24,32 @@ require("lspconfig").gopls.setup({
 	},
 })
 
+local debounce_timer = nil
+require("lspconfig").rust_analyzer.setup({
+	settings = {
+		["rust-analyzer"] = {
+			diagnostics = {
+				enable = true,
+			},
+			checkOnSave = {
+				enable = false, -- Disable on-save checks
+			},
+		},
+	},
+	handlers = {
+		["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
+			if debounce_timer then
+				debounce_timer:stop()
+				debounce_timer:close()
+			end
+
+			debounce_timer = vim.defer_fn(function()
+				vim.lsp.handlers["textDocument/publishDiagnostics"](nil, result, ctx, config)
+			end, 5000) -- 5000ms = 5 seconds
+		end,
+	},
+})
+
 require("lspconfig").clangd.setup({})
 require("lspconfig").pyright.setup({
 	settings = {
@@ -33,8 +59,8 @@ require("lspconfig").pyright.setup({
 				useLibraryCodeForTypes = true,
 			},
 			-- uncomment this line and add python env
-			-- pythonPath = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3",
-			pythonPath = "/Users/hoapham/workspace/local-python/bin/python3",
+			pythonPath = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3",
+			-- pythonPath = "/Users/hoapham/workspace/local-python/bin/python3",
 		},
 	},
 })
@@ -71,9 +97,6 @@ lsp.on_attach(function(_, bufnr)
 	end, opts)
 	vim.keymap.set("n", "K", function()
 		vim.lsp.buf.hover()
-	end, opts)
-	vim.keymap.set("n", "<C-k>", function()
-		vim.lsp.buf.signature_help()
 	end, opts)
 	vim.keymap.set("n", "<leader>vws", function()
 		vim.lsp.buf.workspace_symbol()
