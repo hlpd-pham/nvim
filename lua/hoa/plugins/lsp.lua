@@ -32,7 +32,7 @@ require("lspconfig").rust_analyzer.setup({
 				enable = true,
 			},
 			checkOnSave = {
-				enable = false, -- Disable on-save checks
+				enable = true, -- Disable on-save checks
 			},
 		},
 	},
@@ -59,8 +59,8 @@ require("lspconfig").pyright.setup({
 				useLibraryCodeForTypes = true,
 			},
 			-- uncomment this line and add python env
-			pythonPath = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3",
-			-- pythonPath = "/Users/hoapham/workspace/local-python/bin/python3",
+			-- pythonPath = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3",
+			pythonPath = "/Users/hoapham/workspace/local-python/bin/python3",
 		},
 	},
 })

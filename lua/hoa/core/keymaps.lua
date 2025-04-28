@@ -59,6 +59,9 @@ keymap.set("x", "<leader>p", [["_dP]])
 -- next greatest remap ever : asbjornHaland
 keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- copy paragraph
 keymap.set("n", "<leader>Y", [["+Y]]) -- copy line
+keymap.set("n", "<leader>yy", ":%y+<CR>", { noremap = true, silent = true }) -- copy current file
+keymap.set("n", "<leader>yf", ':let @+ = expand("%")<CR>', { noremap = true, silent = true }) -- copy current relative file path
+keymap.set("n", "<leader>Yf", ':let @+ = expand("%:p")<CR>', { noremap = true, silent = true }) -- copy current absolute file path
 
 keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
