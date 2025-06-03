@@ -1,6 +1,8 @@
 require("nvim-lsp-installer").setup()
 local lsp = require("lsp-zero")
 lsp.preset("recommended")
+lsp.nvim_workspace()
+lsp.setup()
 
 lsp.ensure_installed({
 	"rust_analyzer",
@@ -24,7 +26,6 @@ require("lspconfig").gopls.setup({
 	},
 })
 
-local debounce_timer = nil
 require("lspconfig").rust_analyzer.setup({
 	settings = {
 		["rust-analyzer"] = {
@@ -35,18 +36,6 @@ require("lspconfig").rust_analyzer.setup({
 				enable = true, -- Disable on-save checks
 			},
 		},
-	},
-	handlers = {
-		["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
-			if debounce_timer then
-				debounce_timer:stop()
-				debounce_timer:close()
-			end
-
-			debounce_timer = vim.defer_fn(function()
-				vim.lsp.handlers["textDocument/publishDiagnostics"](nil, result, ctx, config)
-			end, 5000) -- 5000ms = 5 seconds
-		end,
 	},
 })
 
