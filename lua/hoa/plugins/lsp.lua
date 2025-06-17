@@ -26,16 +26,41 @@ require("lspconfig").gopls.setup({
 	},
 })
 
-require("lspconfig").rust_analyzer.setup({
+local debounce_timer = nil
+local lspconfig = require("lspconfig")
+
+-- Only activate rust-analyzer for the specific rust_log_event directory
+lspconfig.rust_analyzer.setup({
 	settings = {
 		["rust-analyzer"] = {
 			diagnostics = {
 				enable = true,
 			},
 			checkOnSave = {
-				enable = true, -- Disable on-save checks
+				enable = false,
+			},
+			-- Performance improvements
+			cargo = {
+				buildScripts = {
+					enable = false, -- Disable build scripts processing
+				},
+				-- Only process the specific package
+				features = "all",
 			},
 		},
+	},
+
+	handlers = {
+		["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
+			if debounce_timer then
+				debounce_timer:stop()
+				debounce_timer:close()
+			end
+
+			debounce_timer = vim.defer_fn(function()
+				vim.lsp.handlers["textDocument/publishDiagnostics"](nil, result, ctx, config)
+			end, 5000) -- 5000ms = 5 seconds
+		end,
 	},
 })
 
@@ -48,8 +73,8 @@ require("lspconfig").pyright.setup({
 				useLibraryCodeForTypes = true,
 			},
 			-- uncomment this line and add python env
-			-- pythonPath = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3",
-			pythonPath = "/Users/hoapham/workspace/local-python/bin/python3",
+			pythonPath = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3",
+			-- pythonPath = "/Users/hoapham/workspace/local-python/bin/python3",
 		},
 	},
 })

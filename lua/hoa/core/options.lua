@@ -90,5 +90,5 @@ vim.diagnostic.config({
 })
 
 vim.g.tmux_navigator_no_mappings = 1
-vim.g.python3_host_prog = "/Users/hoapham/workspace/local-python/bin/python3"
--- vim.g.python3_host_prog = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3"
+-- vim.g.python3_host_prog = "/Users/hoapham/workspace/local-python/bin/python3"
+vim.g.python3_host_prog = "/Users/hoapham/workspace/kelp/kelp_dagster/.venv/bin/python3"
