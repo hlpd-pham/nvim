@@ -1,13 +1,19 @@
 require("mason").setup({
 	ui = {
 		icons = {
-			package_installed = "",
-			package_pending = "",
-			package_uninstalled = "",
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
 		},
 	},
 })
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "pyright", "rust_analyzer" }, -- adjust as needed
+	ensure_installed = {
+		"rust_analyzer",
+		"pyright",
+		"gopls",
+		"clangd",
+	},
+	automatic_installation = true,
 })

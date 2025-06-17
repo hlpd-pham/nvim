@@ -1,14 +1,5 @@
-require("nvim-lsp-installer").setup()
 local lsp = require("lsp-zero")
 lsp.preset("recommended")
-lsp.nvim_workspace()
-lsp.setup()
-
-lsp.ensure_installed({
-	"rust_analyzer",
-	"pyright",
-	"gopls",
-})
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
