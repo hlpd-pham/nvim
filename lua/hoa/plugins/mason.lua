@@ -8,12 +8,4 @@ require("mason").setup({
 	},
 })
 
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"rust_analyzer",
-		"pyright",
-		"gopls",
-		"clangd",
-	},
-	automatic_installation = true,
-})
+-- mason-lspconfig is commented out, using manual LSP configuration in lsp.lua instead
