@@ -84,17 +84,6 @@ return packer.startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- setup lsp zero
-	use({
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
-		requires = {
-
-			-- Autocompletion
-			{ "L3MON4D3/LuaSnip" }, -- Required
-		},
-	})
-
 	-- Add indentation guides even on blank lines
 	use({
 		"lukas-reineke/indent-blankline.nvim",

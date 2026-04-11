@@ -1,11 +1,14 @@
 require("mason").setup({
 	ui = {
 		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
+			package_installed = "",
+			package_pending = "",
+			package_uninstalled = "",
 		},
 	},
 })
 
--- mason-lspconfig is commented out, using manual LSP configuration in lsp.lua instead
+require("mason-lspconfig").setup({
+	ensure_installed = { "gopls", "lua_ls", "pyright", "rust_analyzer" },
+	automatic_enable = false,
+})

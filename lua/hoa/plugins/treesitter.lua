@@ -1,3 +1,7 @@
+local parser_install_dir = vim.fn.stdpath("config") .. "/treesitter"
+
+vim.opt.runtimepath:prepend(parser_install_dir)
+
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
 	ensure_installed = {
@@ -13,6 +17,8 @@ require("nvim-treesitter.configs").setup({
 		"javascript",
 		"typescript",
 	},
+
+	parser_install_dir = parser_install_dir,
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = true,
