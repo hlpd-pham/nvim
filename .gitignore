@@ -1,2 +1,6 @@
 **/.DS_Store
 **plugin
+.nvim-python/
+.nvimlog
+.parser-backup-codex/
+treesitter/
